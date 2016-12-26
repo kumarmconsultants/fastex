@@ -40,6 +40,10 @@
                     <li>
                     <%= link_to 'Contact Us', contact_path %>
                     </li>
+                    <% if user_signed_in? %>
+                    <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete %></li>
+                    <li><%= link_to 'Shipments', shipments_path %></li>
+                    <% end %>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
